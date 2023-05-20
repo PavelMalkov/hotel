@@ -5,7 +5,7 @@
     --input-background: #fff;
     --input-placeholder: #CBD1DC;
 
-    --input-border-focus: #275EFE;
+    --input-border-focus: #C9CACC;
 
     --group-color: var(--input-color);
     --group-border: var(--input-border);
@@ -19,15 +19,13 @@
 
 .formfield {
     display: block;
-    margin-top: 12px;
-    margin-bottom: 12px;
     width: 100%;
     padding: 8px 16px;
     line-height: 25px;
     font-size: 14px;
     font-weight: 500;
     font-family: inherit;
-    border-radius: 6px;
+    border-radius: 4px;
     -webkit-appearance: none;
     color: var(--input-color);
     border: 1px solid var(--input-border);

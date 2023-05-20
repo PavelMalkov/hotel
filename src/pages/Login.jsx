@@ -1,29 +1,36 @@
-import React from 'react'
-import MyButton from '../components/UI/button/MyButton'
-import MyInput from '../components/UI/input/MyInput'
-import { AuthContext } from '../context'
-import { useContext } from 'react'
+import React from "react";
+import MyButton from "../components/UI/button/MyButton";
+import MyInput from "../components/UI/input/MyInput";
+import { AuthContext } from "../context";
+import { useContext } from "react";
+
+import { AlineCentre, Form } from "../styles/Style";
 
 const Login = () => {
+    const { isAuth, setIsAuth } = useContext(AuthContext);
 
-    const {isAuth, setIsAuth} = useContext(AuthContext)
-
-    const login = event => {
+    const login = (event) => {
         event.preventDefault();
         setIsAuth(true);
-        localStorage.setItem('auth', 'true')
-    }
+        localStorage.setItem("auth", "true");
+    };
 
     return (
-        <div>
-            <h1>Страница регистрации пользователя</h1>
-            <form onSubmit={login}>
-                <MyInput type='text' placeholder='Введите логин' />
-                <MyInput type='password' placeholder='Введите пароль' />
+        <AlineCentre>
+            <Form onSubmit={login}>
+                <h1>Simple Hotel Check</h1>
+                <div>
+                    <p>Логин</p>
+                    <MyInput type="text" placeholder="Введите логин" />
+                </div>
+                <div>
+                    <p>Пароль</p>
+                    <MyInput type="password" placeholder="Введите пароль" />
+                </div>
                 <MyButton>Войти</MyButton>
-            </form>
-        </div>
-    )
-}
+            </Form>
+        </AlineCentre>
+    );
+};
 
-export default Login
+export default Login;
